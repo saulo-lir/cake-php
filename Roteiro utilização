@@ -1,0 +1,31 @@
+1) Iniciar o servidor - Digitar no terminal o comando: 
+
+    bin/cake server
+
+- Acessar o sistema pelo navegador:
+
+    http://localhost:8765/
+
+- Caso a página do servidor não esteja acessível, utilizar o comando:
+
+    bin/cake server -H 0.0.0.0
+
+- Acessar o sistema pelo navegador:
+
+    http://0.0.0.0:8765/
+
+
+2) Criar o controller ProdutosController em src/Controller/
+
+3) Criar a pasta Produtos dentro da pasta src/Template, e dentro dessa pasta criar a view index.ctp (ctp = cake template)
+
+4) O arquivo default.ctp dentro de src/Template contém o modelo de cabeçalho que irá ter em todas as páinas.
+Então, se quisermos criar um menu por exemplo, iremos alterar esse arquivo.
+
+5) Configurar o banco de dados: navegar até o arquivo config/app.php
+    - No arquivo, editar o campo 'Datasources', modificando as informações do banco de dados
+
+
+6) Editar página inicial:   
+    - Entrar na pasta config, editar arquivo routes.php
+    - $routes->connect('/', ['controller' => 'MeuControladorInicial', 'action' => 'minhaActionInicial'])

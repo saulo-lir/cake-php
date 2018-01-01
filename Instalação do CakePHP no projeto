@@ -1,0 +1,7 @@
+Requisitos: Ter o composer instalado no PC
+
+Dentro da pasta do projeto, abrir terminal e executar:   
+
+    composer create-project --prefer-dist cakephp/app nome-do-projeto
+
+    Caso ocorra erro (no linux), instalar primeiro pelo synaptc o pacote php-codesniffer
