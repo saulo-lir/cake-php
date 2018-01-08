@@ -1,0 +1,14 @@
+
+    Criar as estruturas das classes através do bake
+
+    1) Criar um model
+
+    bin/cake bake model nome-da-tabela-no-banco
+
+    2) Criar um controller
+
+    bin/cake bake controller nome-da-tabela-no-banco
+
+    3) Criar um template
+
+    bin/cake bake template nome-da-tabela-no-banco

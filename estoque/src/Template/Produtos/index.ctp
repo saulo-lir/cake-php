@@ -1,12 +1,12 @@
   <table>
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Nome</th>
-      <th>Preço</th>
-      <th>Preço com Desconto</th>
-      <th>Descrição</th>
-      <th>Ações</th>
+      <th><?= __('Id') ?></th>
+      <th><?= __('Nome') ?></th>
+      <th><?= __('Preço') ?></th>
+      <th><?= __('Preço com Desconto') ?></th>
+      <th><?= __('Descrição') ?></th>
+      <th><?= __('Ações') ?></th>
     </tr>
   </thead>
   <tbody>
@@ -25,7 +25,7 @@
                     // Os dados serão passados via POST
           echo $this->Form->postLink('Excluir',
           ['controller'=>'produtos','action'=>'excluir', $produto['id']],
-          ['confirm'=>'Tem certeza que deseja apagar o produto '.$produto['nome'].' ?']);
+          ['confirm'=>__('Tem certeza que deseja apagar o produto ').$produto['nome'].' ?']);
           // Mensagem de confirmação
         ?>
       </td>
@@ -39,10 +39,10 @@
 <!-- Declarando um Helper para gerar o html para link-->
 
 <?php
-  echo $this->Html->Link('Novo Produto ',['controller'=>'produtos', 'action'=>'novo']);
+  echo $this->Html->Link(__('Novo Produto '),['controller'=>'produtos', 'action'=>'novo']);
                   // Nome do Link, controlador que queremos utilizar, action que queremos utilizar
 
-  echo $this->Html->Link(' Sair',['controller'=>'users', 'action' =>'sair']);
+  echo $this->Html->Link(__(' Sair'),['controller'=>'users', 'action' =>'sair']);
 ?>
 <!--
   Dispensa o uso convencional de links:
@@ -54,9 +54,9 @@
     <?php
       // Adicionado a listagem de páginas para paginação
 
-      echo $this->Paginator->prev('Voltar');
+      echo $this->Paginator->prev(__('Voltar'));
       echo $this->Paginator->numbers(); // Exibe o número de páginas
-      echo $this->Paginator->next('Avançar');
+      echo $this->Paginator->next(__('Avançar'));
     ?>
   </ul>
 </div>
