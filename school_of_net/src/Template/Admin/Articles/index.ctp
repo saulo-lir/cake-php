@@ -22,7 +22,7 @@
                 <th scope="col"><?= $this->Paginator->sort('url') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('updated') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -34,7 +34,7 @@
                 <td><?= h($article->url) ?></td>
                 <td><?= $article->has('user') ? $this->Html->link($article->user->name, ['controller' => 'Users', 'action' => 'view', $article->user->id]) : '' ?></td>
                 <td><?= h($article->created) ?></td>
-                <td><?= h($article->updated) ?></td>
+                <td><?= h($article->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $article->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $article->id]) ?>

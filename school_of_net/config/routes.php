@@ -49,7 +49,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-    $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    $routes->connect('/', ['controller' => 'Pages', 'action' => 'home']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
@@ -74,6 +74,27 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->fallbacks(DashedRoute::class);
 });
+
+// Criando uma rota
+
+Router::prefix('admin', function($routes){
+
+    $routes->connect('/', ['controller' => 'Articles', 'action' => 'index']);
+
+    /*
+
+        $routes->connect('/:controller', []);
+        $routes->connect('/:controller/:action', []);
+        $routes->connect('/:controller/:action/*', []);
+
+    */
+
+    $routes->fallbacks(DashedRoute::class);
+
+});
+
+
+
 
 /**
  * Load all plugin routes. See the Plugin documentation on

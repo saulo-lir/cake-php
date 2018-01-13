@@ -44,11 +44,37 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
 
+        $this->loadComponent('Auth',[ // Componente que faz o controle de loign.
+                                     // Após carregado aqui, deve-se criar a action login() no controller Users
+
+            'authenticate'=>[ // Aqui são configurados quais campos do formulário
+                              // vão ser autenticados
+                'Form'=>[
+                    'fields'=>[
+                        'username'=>'email', // Troca o username para email
+                        //'password'=>'',
+                    ]
+                ]
+            ],
+
+            'loginRedirect'=>'/users' // Indica a página que será acessada após o login
+
+        ]); 
+
+
+
+
         /*
          * Enable the following components for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
          */
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
+    }
+
+
+    public function beforeFilter(Event $event){         
+
+        $this->Auth->allow(['display', 'home']); // Libera a action display() de todos os controlles (Os que tiverem)
     }
 }

@@ -18,6 +18,7 @@ use Cake\Core\Configure;
 use Cake\Network\Exception\ForbiddenException;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\Event\Event;
 
 /**
  * Static content controller
@@ -28,6 +29,10 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {
+
+    public function home(){
+
+    }
 
     /**
      * Displays a view
@@ -66,4 +71,16 @@ class PagesController extends AppController
             throw new NotFoundException();
         }
     }
+
+
+    public function beforeRender(Event $event){ // O beforeRender sempre é executado antes da página ser renderizada
+
+        parent::beforeRender($event);
+
+        $this->viewBuilder()->layout('meuTemplate');
+
+    }
+
+
+
 }

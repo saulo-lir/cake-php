@@ -39,8 +39,8 @@
             <td><?= h($article->created) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Updated') ?></th>
-            <td><?= h($article->updated) ?></td>
+            <th scope="row"><?= __('modified') ?></th>
+            <td><?= h($article->modified) ?></td>
         </tr>
     </table>
     <div class="row">
