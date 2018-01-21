@@ -1,5 +1,5 @@
 
-    Criar as estruturas das classes através do bake
+    ## Criar as estruturas das classes através do bake ##
 
     1) Criar um model
 
@@ -12,3 +12,25 @@
     3) Criar um template
 
     bin/cake bake template nome-da-tabela-no-banco
+
+
+    ## Criar tabelas sql com migrations ##
+
+    1) Após criar o banco no modo tradicional, usar o comando:
+        
+        bin/cake migrations create CreateUsers (por exemplo)
+
+        Será criado o arquivo Config/Migrations/CreateUsers.php
+
+    2) Após criar a tabela no arquivo, abrir o terminal e executar o comando:
+    
+        bin/cake migrations migrate
+
+
+
+
+
+
+
+
+
