@@ -1,0 +1,71 @@
+    ### Instalar um plugin de terceiros ###
+
+1) executar o comando:
+
+    composer require cakephp-brasil/twitter-bootstrap:dev-master (Baixa o tema AdminLTE2 do bootstrap)
+
+2) No final do arquivo config/bootstrap.php carregar o plugin do bootstrap: 
+
+    Plugin::load('TwitterBootstrap');
+
+3) No método initialize do arquivo  View/AppView.php, arregar o form helper personalizado, 
+substituindo o padrão do cakephp
+
+
+4) Ativar o tema no método initialize da classe AppController
+
+
+5) Finalizar as mudanças no novo tema adicionado, digitando no terminal:
+
+    bin/cake twitter_bootstrap.publish all
+
+    - Após isso, os novos arquivos do tema serão adicionado ao projeto, dentro da pasta Templates/Element
+
+
+6) Criar as tabelas do banco com o migrations, digitando no terminal:
+
+    bin/cake bake migration CreateProducts (CreateNomeTabela)
+                    .
+                    .
+                    .
+    Será criada uma a pasta 'config/Migrations' no projeto, e lá devem ser adicionadas as colunas das tabelas
+
+
+7) Após as tabelas e suas colunas serem criadas, rodar o comando:
+
+    bin/cake migrations migrate
+
+
+8) Para criar o crud de uma tabela, rodar o comando:
+
+    bin/cake bake all nome-da-tabela
+
+
+9) Criar um Behavior:
+
+    Rodar o comando:
+
+    bin/cake bake behavior NomeDoBehavior
+
+10) Criar um Helper:
+
+    Rodar o comando:
+
+    bin/cake bake helper nomeDoHelper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
