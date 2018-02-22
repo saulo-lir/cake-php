@@ -1,0 +1,9 @@
+        ### Liberando CORS: Removendo o erro 'No Access-Control-Allow-Origin header is present on the requested resource' ###
+
+        Este erro ocorre quando fazemos uma requisição ajax para um endereço de um servidor externo. 
+        Por padrão, o protocolo HTTP bloqueia esse tipo de requisição.
+        Para remover esse erro, executamos no terminal:
+
+1)      composer require ozee31/cakephp-cors
+
+2)      bin/cake plugin load Cors --bootstrap
